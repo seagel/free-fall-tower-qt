@@ -66,7 +66,7 @@ Rectangle {
         }
         onTextChanged: {
             if (currentItem != null){
-                if (currentItem.objectMass != 0){
+                if (currentItem.objectMass != 0 && text > 0){
                     var scaleRatio = text / currentItem.objectMass
                     currentItem.objectMass = text
                     currentItem.objectWidth = scaleRatio * currentItem.objectWidth
@@ -136,7 +136,9 @@ Rectangle {
                       height = objectHeight
                      }
                      onObjectMassChanged:  {
-                        mass = objectMass
+                         if (objectMass != 0) {
+                            mass = objectMass
+                         }
                      }
                      onActiveFocusChanged: {
                          console.log("Hello")
