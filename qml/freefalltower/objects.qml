@@ -7,7 +7,7 @@ ListModel {
         name: "Golf Ball"
         image: "golf-ball.jpg"
         mass : 100
-        init_width : 50
+        init_width : 40
         init_height : 40
 
 

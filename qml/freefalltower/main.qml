@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Rectangle {
-    width: 500
-    height: 500
+    width: 600
+    height: 740
 
     Text {
         id: status_text
@@ -112,11 +112,11 @@ Rectangle {
                      Drag.source : object_image
                      Drag.active: dragArea.drag.active
 
-
                      property string objectName: name
                      property real objectMass : mass
                      property real objectWidth : width
                      property real objectHeight : height
+                     property real dropThisMuch : 0
                      signal scale(var changed_mass)
                      MouseArea  {
                        id: dragArea
@@ -138,10 +138,27 @@ Rectangle {
                      onObjectMassChanged:  {
                         mass = objectMass
                      }
+                     onActiveFocusChanged: {
+                         console.log("Hello")
+                     }
+                     states: [
 
+                         State {
+                             name: "drop"
+                             PropertyChanges { target: object_image; y: y + dropThisMuch }
+                         }
+
+                    ]
+                     transitions: Transition {
+                         NumberAnimation { duration: 600; properties: "x,y"; easing.type: Easing.InOutQuad }
+                     }
 
                     }
                     anchors.horizontalCenter: parent.horizontalCenter
+
+
+
+
                 }
 
                 Text {
@@ -156,6 +173,100 @@ Rectangle {
         cellWidth: 70
     }
 
+    ListView {
+        id: layers_list
+        x: 241
+        y: 109
+        width: 166
+        height: 448
+        interactive: false
+
+        property real total_height : 100
+        model:  Qt.createComponent("layers.qml").createObject(null);
+        delegate: Item {
+            x: 5
+            height: (layers_list.height / layers_list.count)
+
+            Row {
+                id: row1
+                Rectangle {
+                    width: 100
+                    height: 5
+                    color: "black"
+                    property string layerNumber : layer_number
+                    property string numberOfLayers : layers_list.count
+                    DropArea {
+                        width: parent.width
+                        height: 40
+                        clip : true
+                        y : -40
+
+                        Rectangle {
+                            x : 0
+                            y : 0
+                            anchors.fill: parent
+                            border.color : "red"
+                            opacity: 0.5
+                            visible : parent.containsDrag
+                        }
+
+                        onDropped: {
+                            status_text.text = qsTr("You have moved a " + drag.source.objectName + " On to floor : " + layer_number )
+                            var temp = simulate_button.currentItem
+                            temp[Object.keys(temp).length] = drag.source
+                            simulate_button.currentItem = temp
+
+                            simulate_button.currentLayer = layer_number
+                        }
+
+                    }
+                    Text {
+                        x : -60
+                        text : (layer_number * (layers_list.total_height / layers_list.count)).toFixed(1) + " cm"
+                    }
+                }
+            }
 
 
-}
+
+
+        }
+    }
+
+    Rectangle {
+        id : simulate_button
+        x: 483
+        y: 68
+        property variant currentItem : []
+        property int currentLayer
+        width: 85
+        height : 25
+        border.width: 5
+        border.color : "red"
+        radius: 10
+        Text {
+            color: "#000000"
+            anchors.centerIn: parent
+            font.bold: true
+            text : "Simulate !"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                console.log(Object.keys(simulate_button.currentItem))
+                for (var i in simulate_button.currentItem) {
+                    if (simulate_button.currentItem[i] != null){
+                        var height_per_layer = layers_list.height / layers_list.count
+                        //simulate_button.currentItem[i].y += (simulate_button.currentLayer) * height_per_layer
+                        simulate_button.currentItem[i].state = ""
+                        simulate_button.currentItem[i].dropThisMuch = (simulate_button.currentLayer) * height_per_layer
+                        simulate_button.currentItem[i].state = "drop"
+                        simulate_button.currentItem[i].dropThisMuch = 0
+                    }
+                }
+                simulate_button.currentItem = []
+            }
+        }
+    }
+
+ }
