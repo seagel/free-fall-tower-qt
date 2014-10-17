@@ -1,22 +1,17 @@
-# Add more folders to ship with the application, here
-folder_01.source = qml/freefalltower
-folder_01.target = qml
-DEPLOYMENTFOLDERS = folder_01
+TEMPLATE = app
 
-# Additional import path used to resolve QML modules in Creator's code model
-QML_IMPORT_PATH =
+QT += qml quick widgets
 
-# If your application uses the Qt Mobility libraries, uncomment the following
-# lines and add the respective components to the MOBILITY variable.
-# CONFIG += mobility
-# MOBILITY +=
-
-# The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp
 
-# Installation path
-# target.path =
+RESOURCES += qml.qrc
 
-# Please do not modify the following two lines. Required for deployment.
-include(qtquick2applicationviewer/qtquick2applicationviewer.pri)
-qtcAddDeployment()
+# Additional import path used to resolve QML modules in Qt Creator's code model
+QML_IMPORT_PATH =
+
+OTHER_FILES += \
+    qml/main.qml \
+    qml/Ball.qml
+
+# Default rules for deployment.
+include(deployment.pri)
