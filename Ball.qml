@@ -10,8 +10,8 @@ Image{
     signal clicked
 
     onWeightChanged: {
-        ball.width=30*weight/100;
-        ball.height=30*weight/100;
+        ball.width=20*weight/100;
+        ball.height=20*weight/100;
     }
 
     MouseArea{

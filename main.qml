@@ -249,7 +249,7 @@ ApplicationWindow {
                 MonkeyTree{
                     id:rightTree
                     height: parent.height
-                    color:"blue"
+                    color:root.color
                     width: parent.width*.35
                     anchors.left : scale.right
                     anchors.right: parent.right

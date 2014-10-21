@@ -13,5 +13,7 @@ OTHER_FILES += \
     qml/main.qml \
     qml/Ball.qml
 
+CONFIG-=app_bundle
+
 # Default rules for deployment.
 include(deployment.pri)

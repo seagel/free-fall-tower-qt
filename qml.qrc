@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>BallContainer.qml</file>
         <file>ExperimentTable.qml</file>
-        <file>FreeFallTowerSwathi.qml</file>
         <file>MonkeyTree.qml</file>
         <file>Ball.qml</file>
         <file>BallsKit.qml</file>
@@ -23,6 +22,9 @@
         <file>images/scale2.png</file>
         <file>images/Tree.jpg</file>
         <file>images/scale.png</file>
+        <file>images/NewMonkey.png</file>
+        <file>images/NewMonkeyTail.png</file>
+        <file>images/NewMonkeyTree.png</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

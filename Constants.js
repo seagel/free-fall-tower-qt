@@ -1,5 +1,8 @@
 .pragma library
 
+var monkeyTreeSource = "images/NewMonkeyTree.png";
+var monkeyTailSource = "images/NewMonkeyTail.png";
+var monkeySource = "images/NewMonkey.png";//"images/Monkey2.png"
 var weighingMachineSource = "images/scale2.png";
 var rulerSource = "images/Ruler.png";
 var footBallSource = "images/football.png";

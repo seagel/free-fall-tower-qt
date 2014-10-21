@@ -1,4 +1,5 @@
 import QtQuick 2.2
+import "Constants.js" as Constants
 Rectangle {
     id:root
     property int totalMonkeyHeight:monkeyTail.height+tree.height+monkey.height
@@ -10,19 +11,19 @@ Rectangle {
     property int currentHeight: (15/(parent.height *.78))*ballContainer.height
     clip:true
 
-    border.color: "black"
+
     Image{
         id:tree
         width: parent.width
         height: parent.height * .1
         anchors.top: parent.top
-        source: "images/Tree.jpg"
+        source: Constants.monkeyTreeSource//"images/Tree.jpg"
     }
     Image {
         id: monkeyTail
         width: parent.width
         anchors.top: tree.bottom
-        source: "images/MonkeyTail.jpg"
+        source: Constants.monkeyTailSource//"images/MonkeyTail.jpg"
         height: monkey.y - tree.height
     }
     Image {
@@ -31,7 +32,7 @@ Rectangle {
         height: parent.height * .1
         anchors.left:parent.left
         anchors.right:parent.right
-        source: "images/Monkey.jpg"
+        source: Constants.monkeySource//"images/Monkey2.png"
 
         MouseArea{
             id:dragMonkey

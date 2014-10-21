@@ -3,7 +3,7 @@ import QtQuick 2.0
 Rectangle{
     id: root
     color: "#49BAB6"
-    property int duration
+    property int duration: 0
     property string medium
     property alias ball: ball
     property alias ballWeight : ball.weight
