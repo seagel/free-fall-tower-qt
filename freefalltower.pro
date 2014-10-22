@@ -17,3 +17,5 @@ CONFIG+=app_bundle
 
 # Default rules for deployment.
 include(deployment.pri)
+
+#QMAKE_MAC_SDK = macosx10.9
