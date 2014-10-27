@@ -7,7 +7,7 @@
         <file>Ball.qml</file>
         <file>BallsKit.qml</file>
         <file>Button2.qml</file>
-        <file>Constants.js</file>
+        <file>properties.js</file>
         <file>WeighingMachine.qml</file>
         <file>main.cpp</file>
         <file>images/Monkey.png</file>
@@ -25,6 +25,7 @@
         <file>images/NewMonkey.png</file>
         <file>images/NewMonkeyTail.png</file>
         <file>images/NewMonkeyTree.png</file>
+        <file>event_handler.js</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

@@ -1,6 +1,7 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
-import "Constants.js" as Constants
+import "properties.js" as Constants
+import "event_handler.js" as EventHandler
 
 ApplicationWindow {
     id: root
@@ -62,30 +63,17 @@ ApplicationWindow {
 
                 //TODO: Change this logic to STATE into WeighingMachine
                 onFootballClicked: {
-                    scaleLeft.ball.source = Constants.footBallSource;
-                    scaleLeft.ball.visible = true;
-                    scaleLeft.ball.text = Constants.footBallText;
-                    scaleLeft.ballText = Constants.footBallText;
+                    EventHandler.onBallClicked(scaleLeft, "football")
                 }
                 onIronballClicked:{
-                    scaleLeft.ball.source = Constants.ironBallSource;
-                    scaleLeft.ball.visible = true;
-                    scaleLeft.ball.text = Constants.ironBallText;
-                    scaleLeft.ballText = Constants.ironBallText;
+                    EventHandler.onBallClicked(scaleLeft, "ironball")
                 }
                 onCottonballClicked:{
-                    scaleLeft.ball.source = Constants.cottonBallSource;
-                    scaleLeft.ball.visible = true;
-                    scaleLeft.ball.text = Constants.cottonBallText;
-                    scaleLeft.ballText = Constants.cottonBallText;
+                    EventHandler.onBallClicked(scaleLeft, "cottonball")
 
                 }
                 onGolfballClicked:{
-                    scaleLeft.ball.source = Constants.golfBallSource;
-                    scaleLeft.ball.visible = true;
-                    scaleLeft.ball.text = Constants.golfBallText;
-                    scaleLeft.ballText = Constants.golfBallText;
-
+                    EventHandler.onBallClicked(scaleLeft, "golfball")
                 }
             }
 
@@ -264,30 +252,19 @@ ApplicationWindow {
                 anchors.topMargin: 15
 
                 onFootballClicked: {
-                    scaleRight.ball.source = Constants.footBallSource;
-                    scaleRight.ball.visible = true;
-                    scaleRight.ballText = Constants.footBallText;
-                    scaleRight.ball.text = Constants.footBallText;
+                    EventHandler.onBallClicked(scaleRight, "football")
                 }
                 onIronballClicked:{
-                    scaleRight.ball.source = Constants.ironBallSource;
-                    scaleRight.ball.visible = true;
-                    scaleRight.ballText = Constants.ironBallText;
-                    scaleRight.ball.text = Constants.ironBallText;
+                    EventHandler.onBallClicked(scaleRight, "ironball")
                 }
                 onCottonballClicked:{
-                    scaleRight.ball.source = Constants.cottonBallSource;
-                    scaleRight.ball.visible = true;
-                    scaleRight.ballText = Constants.cottonBallText;
-                    scaleRight.ball.text = Constants.cottonBallText;
+                    EventHandler.onBallClicked(scaleRight, "cottonball")
 
                 }
                 onGolfballClicked:{
-                    scaleRight.ball.source = Constants.golfBallSource;
-                    scaleRight.ball.visible = true;
-                    scaleRight.ballText = Constants.golfBallText;
-                    scaleRight.ball.text = Constants.golfBallText;
+                    EventHandler.onBallClicked(scaleRight, "golfball")
                 }
+
             }
 
             WeighingMachine{

@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import "Constants.js" as Constants
+import "properties.js" as Constants
 
 Item {
     id: root
@@ -16,32 +16,32 @@ Item {
         rows: 2; columns: 2; spacing: 4
         Ball {
             id:footBall
-            source: Constants.footBallSource
-            text: Constants.footBallText
+            source: Constants.source("football")
+            text: Constants.text("football")
             onClicked:{
                 root.footballClicked();
             }
         }
         Ball {
             id:golfBall
-            source: Constants.golfBallSource
-            text: Constants.golfBallText
+            source: Constants.source("golfball")
+            text: Constants.text("golfball")
             onClicked:{
                 root.golfballClicked();
             }
         }
         Ball {
             id:ironBall
-            source: Constants.ironBallSource
-            text: Constants.ironBallText
+            source: Constants.source("ironball")
+            text: Constants.text("ironball")
             onClicked:{
                 root.ironballClicked();
             }
         }
         Ball {
             id:cottonBall
-            source: Constants.cottonBallSource
-            text: Constants.cottonBallText
+            source: Constants.source("cottonball")
+            text: Constants.text("cottonball")
             onClicked:{
                 root.cottonballClicked();
             }

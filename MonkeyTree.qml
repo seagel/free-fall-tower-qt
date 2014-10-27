@@ -1,5 +1,5 @@
 import QtQuick 2.2
-import "Constants.js" as Constants
+import "properties.js" as Constants
 Rectangle {
     id:root
     property int totalMonkeyHeight:monkeyTail.height+tree.height+monkey.height

@@ -29,15 +29,6 @@ Rectangle{
         }
     }
 
-    states:[
-        State{
-            name: "football"
-            PropertyChanges{ target:ball; source:"images/football.png"}
-            PropertyChanges{ target:ball; visible:true}
-            PropertyChanges{ target:ball; text:"FOOT BALL"}
-        }
-    ]
-
     ParallelAnimation{
         id: anim
         NumberAnimation{
