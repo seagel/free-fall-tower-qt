@@ -29,17 +29,6 @@ ApplicationWindow {
         }
     }
 
-    statusBar: StatusBar {
-        id: statusBar
-        property alias message: statusMessage
-        //RowLayout {
-            Label {
-                id: statusMessage
-                text: "Read Only"
-            }
-        //}
-    }
-
     onInProgressChanged: {
         if(inProgress){
             leftKit.enabled = false;
