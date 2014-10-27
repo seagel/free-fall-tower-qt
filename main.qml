@@ -33,10 +33,14 @@ ApplicationWindow {
         if(inProgress){
             leftKit.enabled = false;
             rightKit.enabled = false;
+            scaleLeft.enabled = false;
+            scaleRight.enabled = false;
 
         } else {
             leftKit.enabled = true;
             rightKit.enabled = true;
+            scaleLeft.enabled = true;
+            scaleRight.enabled = true;
         }
 
     }
