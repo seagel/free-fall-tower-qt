@@ -50,4 +50,9 @@ Rectangle {
         color:"#49BAB6"
     }
 
+    function reset(){
+        monkey.y = tree.height + 10;
+        ballContainer.reset();
+    }
+
 }

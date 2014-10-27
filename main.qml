@@ -223,15 +223,12 @@ ApplicationWindow {
                             anchors.bottom:parent.bottom
 
                             onClicked: {
-                                freeFall.leftBallContainer.duration = 0;
-                                freeFall.rightBallContainer.duration = 0;
-                                freeFall.leftBallContainer.ball.y = 0;
-                                freeFall.rightBallContainer.ball.y = 0;
-                                freeFall.leftBallContainer.ball.visible = false;
-                                freeFall.rightBallContainer.ball.visible = false;
-                                freeFall.leftBallContainer.ball.weight = 0;
-                                freeFall.rightBallContainer.ball.weight = 0;
                                 btnReset.visible = false;
+
+                                rightTree.reset();
+                                leftTree.reset();
+                                scaleRight.reset();
+                                scaleLeft.reset();
 
                                 inProgress = false;
                             }

@@ -8,7 +8,7 @@ Rectangle{
     color: "#4abbb4"
     property alias text: weightText.text
     signal onSlideValueChanged;
-    property alias slideValue: slider1.value
+    property alias slideValue: slider.value
     property alias ball:  ball
     property alias ballText: labelText.text
     property alias anim: anim
@@ -63,7 +63,7 @@ Rectangle{
     }
 
     Slider{
-        id: slider1
+        id: slider
         anchors.top: scale.bottom
         anchors.margins: 5
         anchors.bottom: labelText.top
@@ -81,20 +81,15 @@ Rectangle{
 
     Text {
         id: labelText
-        anchors.top: slider1.Bottom
+        anchors.top: slider.Bottom
         anchors.bottom: parent.bottom
         anchors.margins: 10
         text: ""
     }
 
-    /*Button2{
-        id: labelText
-        anchors.top: slider1.Bottom
-        anchors.bottom: parent.bottom
-        //anchors.margins: 10
-        height: 50
-        text: ""
+    function reset(){
+        slider.value = 100;
+    }
 
-    }*/
 
 }

@@ -18,4 +18,8 @@ Image{
         anchors.fill: parent
         onClicked: ball.clicked();
     }
+
+    function reset(){
+        y = 0;
+    }
 }

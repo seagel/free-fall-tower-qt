@@ -27,4 +27,10 @@ Rectangle{
         }
 
     }
+
+    function reset(){
+        duration = 0;
+        ball.reset();
+        ball.visible = false;
+    }
 }
