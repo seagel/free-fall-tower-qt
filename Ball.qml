@@ -21,5 +21,6 @@ Image{
 
     function reset(){
         y = 0;
+        visible = false;
     }
 }

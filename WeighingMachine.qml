@@ -89,6 +89,7 @@ Rectangle{
 
     function reset(){
         slider.value = 100;
+        ball.reset();
     }
 
 
