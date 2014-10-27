@@ -1,5 +1,6 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
+import QtQuick.Layouts 1.1
 import "properties.js" as Constants
 import "event_handler.js" as EventHandler
 
@@ -14,6 +15,8 @@ ApplicationWindow {
     property int medium: 1000
     property int fast: 500
     color: "#49BAB6"
+    property bool inProgress: false
+
 
 
     menuBar: MenuBar {
@@ -24,6 +27,29 @@ ApplicationWindow {
                 onTriggered: Qt.quit();
             }
         }
+    }
+
+    statusBar: StatusBar {
+        id: statusBar
+        property alias message: statusMessage
+        //RowLayout {
+            Label {
+                id: statusMessage
+                text: "Read Only"
+            }
+        //}
+    }
+
+    onInProgressChanged: {
+        if(inProgress){
+            leftKit.enabled = false;
+            rightKit.enabled = false;
+
+        } else {
+            leftKit.enabled = true;
+            rightKit.enabled = true;
+        }
+
     }
 
     Rectangle {
@@ -82,8 +108,6 @@ ApplicationWindow {
                 width: 400
                 height: parent.height
                 anchors.centerIn: parent
-                //anchors.left:scaleLeft.right
-                //anchors.right:scaleRight.left
                 color: root.color
                 property alias leftBallContainer: leftTree.ballContainer
                 property alias rightBallContainer: rightTree.ballContainer
@@ -146,6 +170,7 @@ ApplicationWindow {
                             visible: false
 
                             onClicked: {
+                                inProgress = true;
 
                                 if(!isVacuum){
                                     var exp = Math.exp((leftTree.currentHeight * 240)/leftTree.ballContainer.ball.weight);
@@ -218,7 +243,8 @@ ApplicationWindow {
                                 freeFall.leftBallContainer.ball.weight = 0;
                                 freeFall.rightBallContainer.ball.weight = 0;
                                 btnReset.visible = false;
-                                //btnDrop.visible = true
+
+                                inProgress = false;
                             }
                         }
 
@@ -274,6 +300,7 @@ ApplicationWindow {
                 anchors.rightMargin: 8
 
                 onBallClicked: {
+
                     freeFall.rightBallContainer.ballSource = scaleRight.ball.source;
                     freeFall.rightBallContainer.ballWeight = scaleRight.ball.weight;
                     freeFall.rightBallContainer.ballVisible = scaleRight.ball.visible;
