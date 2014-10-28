@@ -21,8 +21,7 @@ Rectangle{
         source:""
         anchors.bottom: scale.top
         visible: false
-        width:30
-        height:30
+        weight: 0
 
         onClicked: {
             root.ballClicked();
