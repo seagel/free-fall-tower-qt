@@ -38,7 +38,7 @@ Rectangle {
             id:dragMonkey
             anchors.fill: parent
             drag.target: parent
-            drag.maximumY: root.height-parent.height
+            drag.maximumY: root.height-parent.height*3
             drag.minimumY:tree.height
         }
     }
