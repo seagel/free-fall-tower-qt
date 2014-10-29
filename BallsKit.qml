@@ -11,7 +11,6 @@ Item {
     signal ironballClicked;
     signal cottonballClicked;
 
-
     Grid{
         id: grid
         rows: 2; columns: 2; spacing: 4
@@ -48,6 +47,7 @@ Item {
             }
         }
     }
+
 
 
 }

@@ -17,8 +17,6 @@ ApplicationWindow {
     color: "#49BAB6"
     property bool inProgress: false
 
-
-
     menuBar: MenuBar {
         Menu {
             title: qsTr("File")
@@ -70,6 +68,9 @@ ApplicationWindow {
                     scaleLeft.ball.visible = false;
                     freeFall.leftBallContainer.duration = root.medium;
                     freeFall.scale.spaceAboveScale.dropButton.visible = true
+
+                    bubbleStep2.hide();
+                    bubbleStep3.show();
                 }
             }
 
@@ -82,18 +83,33 @@ ApplicationWindow {
 
                 //TODO: Change this logic to STATE into WeighingMachine
                 onFootballClicked: {
+                    bubbleStep1.hide();
                     EventHandler.onBallClicked(scaleLeft, "football")
+                    bubbleStep2.show();
                 }
                 onIronballClicked:{
+                    bubbleStep1.hide();
                     EventHandler.onBallClicked(scaleLeft, "ironball")
+                    bubbleStep2.show();
                 }
                 onCottonballClicked:{
+                    bubbleStep1.hide();
                     EventHandler.onBallClicked(scaleLeft, "cottonball")
-
+                    bubbleStep2.show();
                 }
                 onGolfballClicked:{
+                    bubbleStep1.hide();
                     EventHandler.onBallClicked(scaleLeft, "golfball")
+                    bubbleStep2.show();
                 }
+            }
+
+
+
+            Bubble {
+                id: bubbleStep1
+                text: "Pick an object. Click to select it!"
+                anchors.bottom: leftKit.bottom
             }
 
             Rectangle{
@@ -156,6 +172,14 @@ ApplicationWindow {
                             }
                         }
 
+                        Bubble {
+                            id: bubbleStep3
+                            text: "Select medium & drop"
+                            anchors.bottom: btnDrop.top
+                            width:150
+                            visible: false
+                        }
+
                         Button2{
                             id: btnDrop
                             text: "Drop"
@@ -164,6 +188,7 @@ ApplicationWindow {
 
                             onClicked: {
                                 inProgress = true;
+                                bubbleStep3.hide();
 
                                 if(!isVacuum){
                                     var exp = Math.exp((leftTree.currentHeight * 240)/leftTree.ballContainer.ball.weight);
@@ -228,6 +253,7 @@ ApplicationWindow {
 
                             onClicked: {
                                 btnReset.visible = false;
+                                bubbleStep1.show();
 
                                 rightTree.reset();
                                 leftTree.reset();
@@ -300,6 +326,14 @@ ApplicationWindow {
                     scaleRight.ball.visible = false;
                     freeFall.scale.spaceAboveScale.dropButton.visible = true
                 }
+            }
+
+            Bubble {
+                id: bubbleStep2
+                text: "Slide to change weight of object"
+                anchors.left: scaleLeft.right
+                anchors.bottom: scaleLeft.bottom
+                visible: false
             }
         }
 

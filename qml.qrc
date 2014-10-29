@@ -26,6 +26,8 @@
         <file>images/NewMonkeyTail.png</file>
         <file>images/NewMonkeyTree.png</file>
         <file>event_handler.js</file>
+        <file>Bubble.qml</file>
+        <file>images/bubble.png</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

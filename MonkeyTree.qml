@@ -11,7 +11,6 @@ Rectangle {
     property int currentHeight: (15/(parent.height *.78))*ballContainer.height
     clip:true
 
-
     Image{
         id:tree
         width: parent.width
