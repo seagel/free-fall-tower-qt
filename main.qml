@@ -155,6 +155,7 @@ ApplicationWindow {
                                 spacing: 10
 
                                 RadioButton {
+                                    id: vacuum
                                     text: "Vacuum"
                                     checked: true
                                     exclusiveGroup: tabPositionGroup
@@ -163,12 +164,17 @@ ApplicationWindow {
                                     }
                                 }
                                 RadioButton {
+                                    id: air
                                     text: "Air"
                                     exclusiveGroup: tabPositionGroup
                                     onClicked: {
                                         isVacuum = false
                                     }
                                 }
+                            }
+
+                            function reset() {
+                                vacuum.checked = true
                             }
                         }
 
@@ -259,6 +265,7 @@ ApplicationWindow {
                                 leftTree.reset();
                                 scaleRight.reset();
                                 scaleLeft.reset();
+                                mediumBox.reset();
 
                                 inProgress = false;
                             }
