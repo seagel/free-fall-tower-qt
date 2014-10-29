@@ -31,5 +31,6 @@ Rectangle{
     function reset(){
         duration = 0;
         ball.reset();
+        ball.weight = 0;
     }
 }
