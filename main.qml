@@ -337,7 +337,8 @@ ApplicationWindow {
 
             Bubble {
                 id: bubbleStep2
-                text: "Slide to change weight of object"
+                text: "Slide to change weight and click the object"
+                width: 350
                 anchors.left: scaleLeft.right
                 anchors.bottom: scaleLeft.bottom
                 visible: false

@@ -8,7 +8,7 @@ Image{
     height: 40
     source:Constants.bubble
     z: 20
-    opacity: 0.75
+    opacity: 0.55
 
     property alias text: text.text
     signal clicked
