@@ -7,6 +7,7 @@ var bubble = "images/bubble.png"
 var weighingMachineSource = "images/scale2.png";
 var rulerSource = "images/Ruler.png";
 var ballClickErrorMessage = "Ball cannot be replaced when experiment is in progress";
+var weightMeasureUnit = "kg";
 
 function source(ballId) {
     return "images/" + ballId + ".png"

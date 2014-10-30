@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.2
+import "properties.js" as Constants
 
 Rectangle{
     id: root
@@ -73,7 +74,7 @@ Rectangle{
 
         onValueChanged: {
             ball.weight = value;
-            weightText.text = value
+            weightText.text = value + Constants.weightMeasureUnit
             root.onSlideValueChanged();
         }
     }
