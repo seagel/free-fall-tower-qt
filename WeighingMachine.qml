@@ -48,7 +48,7 @@ Rectangle{
     Image {
         id: scale
         y:30
-        source: "images/scale2.png"
+        source: "images/scale.png"
         anchors.horizontalCenter: parent.horizontalCenter
     }
 

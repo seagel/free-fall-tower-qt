@@ -1,11 +1,11 @@
 .pragma library
 
-var monkeyTreeSource = "images/NewMonkeyTree.png";
-var monkeyTailSource = "images/NewMonkeyTail.png";
-var monkeySource = "images/NewMonkey.png";
+var monkeyTreeSource = "images/monkeyTree.png";
+var monkeyTailSource = "images/monkeyTail.png";
+var monkeySource = "images/monkey.png";
 var bubble = "images/bubble.png"
-var weighingMachineSource = "images/scale2.png";
-var rulerSource = "images/Ruler.png";
+var weighingMachineSource = "images/scale.png";
+var rulerSource = "images/ruler.png";
 var ballClickErrorMessage = "Ball cannot be replaced when experiment is in progress";
 var weightMeasureUnit = "kg";
 
