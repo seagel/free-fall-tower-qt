@@ -10,18 +10,12 @@
         <file>properties.js</file>
         <file>WeighingMachine.qml</file>
         <file>main.cpp</file>
-        <file>images/Monkey.png</file>
         <file>images/cottonball.png</file>
         <file>images/football.png</file>
         <file>images/golfball.png</file>
         <file>images/ironball.png</file>
-        <file>images/Monkey.jpg</file>
-        <file>images/MonkeyTail.jpg</file>
-        <file>images/rocket.png</file>
         <file>images/Ruler.png</file>
         <file>images/scale2.png</file>
-        <file>images/Tree.jpg</file>
-        <file>images/scale.png</file>
         <file>images/NewMonkey.png</file>
         <file>images/NewMonkeyTail.png</file>
         <file>images/NewMonkeyTree.png</file>
