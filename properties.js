@@ -5,7 +5,7 @@ var monkeyTailSource = "images/monkeyTail.png";
 var monkeySource = "images/monkey.png";
 var bubble = "images/bubble.png"
 var weighingMachineSource = "images/scale.png";
-var rulerSource = "images/ruler.png";
+var rulerSource = "images/Ruler.png";
 var ballClickErrorMessage = "Ball cannot be replaced when experiment is in progress";
 var weightMeasureUnit = "kg";
 
